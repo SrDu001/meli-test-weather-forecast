@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  server:
+    build: .
+    image: ml-challenge-sswf
+    ports:
+      - 80:80
+    environment:
+      - POSTGRES_URL=jdbc:postgresql://postgres:5432/sswf
+      - POSTGRES_USERNAME=admin
+      - POSTGRES_PASSWORD=admin
+  postgres:
+    image: postgres:13
+    volumes:
+      - test-spring-postgres-data:/var/lib/postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=sswf
+    ports:
+      - '5432:5432'
+volumes:
+  test-spring-postgres-data:
