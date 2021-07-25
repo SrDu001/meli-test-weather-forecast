@@ -1,4 +1,4 @@
-package com.srdu001.sswf.model;
+package com.srdu001.sswf.domain.model;
 
 import lombok.Builder;
 import lombok.Data;

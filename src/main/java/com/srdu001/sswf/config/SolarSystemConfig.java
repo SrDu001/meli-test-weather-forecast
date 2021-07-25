@@ -1,7 +1,7 @@
 package com.srdu001.sswf.config;
 
-import com.srdu001.sswf.model.SolarSystem;
-import com.srdu001.sswf.model.Planet;
+import com.srdu001.sswf.domain.model.SolarSystem;
+import com.srdu001.sswf.domain.model.Planet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

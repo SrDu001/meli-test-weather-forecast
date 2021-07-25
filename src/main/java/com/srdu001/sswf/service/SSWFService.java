@@ -2,8 +2,8 @@ package com.srdu001.sswf.service;
 
 import com.srdu001.sswf.bd.*;
 import com.srdu001.sswf.bd.IForecastDAO;
-import com.srdu001.sswf.model.Planet;
-import com.srdu001.sswf.model.SolarSystem;
+import com.srdu001.sswf.domain.model.Planet;
+import com.srdu001.sswf.domain.model.SolarSystem;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.awt.geom.Point2D;
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class SolarSystemWeatherForecastService {
+public class SSWFService {
 
     private final SolarSystem solarSystem;
     private final IForecastDAO forecastDAO;
@@ -23,7 +23,7 @@ public class SolarSystemWeatherForecastService {
     private final IWeatherConditionDAO weatherConditionDAO;
     private final Point2D.Double SUN_POS = new Point2D.Double(0.0, 0.0);
 
-    public void generateWeatherForecast(int daysToCalculate) {
+    public WeatherForecastSummary generateWeatherForecast(int daysToCalculate) {
 
         WeatherForecastSummary weatherForecastSummary = WeatherForecastSummary.builder().build();
         String lastForecastCondition = "";
@@ -32,26 +32,28 @@ public class SolarSystemWeatherForecastService {
         for (int d = 1; d <= daysToCalculate; d++) {
             Forecast currentForecast = getWeatherByDay(d);
             forecastDAO.save(currentForecast);
+            //first forecast
             if (d == 1) {
                 lastForecastCondition = currentForecast.getWeatherCondition().getName();
                 addPeriod(weatherForecastSummary, lastForecastCondition);
             }
+            //next forecasts
             if (!currentForecast.getWeatherCondition().getName().equals(lastForecastCondition)) {
                 lastForecastCondition = currentForecast.getWeatherCondition().getName();
                 addPeriod(weatherForecastSummary, currentForecast.getWeatherCondition().getName());
             }
+            //if its rainy, maxRainyDay is calculated
             if (currentForecast.getWeatherCondition().getName().equals("Rainy")) {
                 if (currentForecast.getPerimeter() >= maxPerimeter) {
                     maxPerimeter = currentForecast.getPerimeter();
                     weatherForecastSummary.setMaxRainyDay(currentForecast.getDay());
                 }
             }
-
         }
-        weatherForecastSummaryDAO.save(weatherForecastSummary);
+        return weatherForecastSummaryDAO.save(weatherForecastSummary);
     }
 
-    private void addPeriod(WeatherForecastSummary weatherForecastSummary, String name) {
+    private WeatherForecastSummary addPeriod(WeatherForecastSummary weatherForecastSummary, String name) {
         switch (name) {
             case "Rainy":
                 weatherForecastSummary.addRainyPeriod();
@@ -66,9 +68,10 @@ public class SolarSystemWeatherForecastService {
                 weatherForecastSummary.addOptimalPeriod();
                 break;
         }
+        return weatherForecastSummary;
     }
 
-    public Forecast getWeatherByDay(int day) {
+    private Forecast getWeatherByDay(int day) {
 
         Point2D p1 = getPlanetPosition(solarSystem.getPlanets().get(0), day);
         Point2D p2 = getPlanetPosition(solarSystem.getPlanets().get(1), day);
