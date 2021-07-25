@@ -2,10 +2,11 @@ server:
   port: 80
 spring:
   datasource:
-    url: jdbc:h2:mem:sswf;DB_CLOSE_ON_EXIT=FALSE
-    username: admin
-    password: test
-    driver-class-name: org.h2.Driver
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
