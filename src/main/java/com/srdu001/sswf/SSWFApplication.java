@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SolarSystemWeatherForecastApplication {
+public class SSWFApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SolarSystemWeatherForecastApplication.class, args);
+        SpringApplication.run(SSWFApplication.class, args);
     }
 }

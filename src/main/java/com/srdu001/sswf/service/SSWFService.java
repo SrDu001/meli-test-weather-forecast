@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import static com.srdu001.sswf.util.Geometry.*;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -28,10 +30,10 @@ public class SSWFService {
         WeatherForecastSummary weatherForecastSummary = WeatherForecastSummary.builder().build();
         String lastForecastCondition = "";
         Double maxPerimeter = 0d;
-
+        List<Forecast> forecastList = new ArrayList<>();
         for (int d = 1; d <= daysToCalculate; d++) {
             Forecast currentForecast = getWeatherByDay(d);
-            forecastDAO.save(currentForecast);
+            forecastList.add(currentForecast);
             //first forecast
             if (d == 1) {
                 lastForecastCondition = currentForecast.getWeatherCondition().getName();
@@ -50,7 +52,9 @@ public class SSWFService {
                 }
             }
         }
-        return weatherForecastSummaryDAO.save(weatherForecastSummary);
+        forecastDAO.saveAll(forecastList);
+        weatherForecastSummaryDAO.save(weatherForecastSummary);
+        return weatherForecastSummary;
     }
 
     private WeatherForecastSummary addPeriod(WeatherForecastSummary weatherForecastSummary, String name) {
