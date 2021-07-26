@@ -1,10 +1,10 @@
 # Challenge ML - Pronóstico de Clima de Sitema Solar
 
- Solucion de la prueba de ingreso a Mercado Libre.
+ Solución de la prueba de ingreso a Mercado Libre.
 
 ## Resumen del enunciado
 
-Existe un sistema solar conformado por 3 planetas: Ferrengi, Betasoide y Vulcano
+Existe un sistema solar conformado por 3 planetas: Ferrengi, Betasoide y Vulcano.
 
 - El planeta Ferengi se desplaza con una velocidad angular de 1 grados/día en sentido horario. Su distancia con respecto al sol es de 500Km.
 - El planeta Betasoide se desplaza con una velocidad angular de 3 grados/día en sentido horario. Su distancia con respecto al sol es de 2000Km.
@@ -86,8 +86,3 @@ Si el sol esta dentro del triangulo, se suman las areas de los 3 triangulos que 
 ![image](https://user-images.githubusercontent.com/43072051/126928882-14c8cea3-a658-483c-b864-af185ea865d9.png)
 ##### Formula para determinar el perímetro
 ![image](https://user-images.githubusercontent.com/43072051/126928912-fb02cbf9-705c-48b6-922f-78e0ca144dfc.png)
-
-
-
-
-
