@@ -5,11 +5,9 @@ RUN gradle build
 
 FROM openjdk:11-jdk-slim
 ENV SPRING_PROFILES_ACTIVE=pdn
-ENV PORT=$PORT
-EXPOSE $PORT
 ARG JAR_FILE=target/*.jar
 COPY --from=build /home/gradle/src/build/libs/\*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar", "-Dhttp.port=$PORT"]
+ENTRYPOINT ["java", "-Dserver.port=$PORT", "-jar","/app.jar"]
 
 # docker-compose up -d
 # heroku login

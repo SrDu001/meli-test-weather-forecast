@@ -1,5 +1,3 @@
-server:
-  port: ${PORT:33500}
 spring:
   datasource:
     url: ${POSTGRES_URL}
