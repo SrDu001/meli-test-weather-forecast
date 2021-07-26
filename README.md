@@ -94,7 +94,7 @@ Cuenta Docker Hub
 ##### Formulas para determinar cordenadas en la órbita
 ![image](https://user-images.githubusercontent.com/43072051/126928681-146216d5-0f4b-4e7b-8625-866ac5f0d919.png)
 ##### Formula para determinar el area
-Si el sol esta dentro del triangulo, se suman las areas de los 3 triangulos que se forman y si el resultado es igual al area del triangulo original, entonces el sol está dentro.
+Si el sol esta dentro del triangulo, se suman las areas de los 3 triangulos que se forman y si el resultado es igual al area del triangulo original, entonces el sol está dentro, el sol se encuenta en la posición (0,0).
 ![image](https://user-images.githubusercontent.com/43072051/126928882-14c8cea3-a658-483c-b864-af185ea865d9.png)
 ##### Formula para determinar el perímetro
 ![image](https://user-images.githubusercontent.com/43072051/126928912-fb02cbf9-705c-48b6-922f-78e0ca144dfc.png)
