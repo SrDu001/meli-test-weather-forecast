@@ -48,11 +48,11 @@ https://ml-challenge-sswf.herokuapp.com/swagger-ui.html
 
 #### Servicios:
 
-##### Obtener pronóstico por día, este servicio muestra tambien la posicion de los planetas para la comprobacion
+##### Obtener pronóstico por día, este servicio muestra tambien la posicion de los planetas para la comprobación
 
 https://ml-challenge-sswf.herokuapp.com/api/sswf/weather?day=123
 
-Para comprobar la solucion utilizar la siguiente grafica y reemplazar los puntos de P1, P2 y P3
+Para comprobar la solucion utilizar la siguiente gráfica y reemplazar los puntos de PlanetPosition1, PlanetPosition2 y PlanetPosition3
 
 https://www.geogebra.org/classic/yjwppygq
  
@@ -82,7 +82,7 @@ Docker
 ##### Formulas para determinar cordenadas en la órbita
 ![image](https://user-images.githubusercontent.com/43072051/126928681-146216d5-0f4b-4e7b-8625-866ac5f0d919.png)
 ##### Formula para determinar el area
-si el sol esta dentro del triangulo, se suman las areas de los 3 triangulos que se forman y si el resultado es igual al area del triangulo original, entonces el sol está dentro
+Si el sol esta dentro del triangulo, se suman las areas de los 3 triangulos que se forman y si el resultado es igual al area del triangulo original, entonces el sol está dentro.
 ![image](https://user-images.githubusercontent.com/43072051/126928882-14c8cea3-a658-483c-b864-af185ea865d9.png)
 ##### Formula para determinar el perímetro
 ![image](https://user-images.githubusercontent.com/43072051/126928912-fb02cbf9-705c-48b6-922f-78e0ca144dfc.png)
