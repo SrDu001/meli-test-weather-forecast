@@ -52,7 +52,7 @@ https://ml-challenge-sswf.herokuapp.com/swagger-ui.html
 
 https://ml-challenge-sswf.herokuapp.com/api/sswf/weather?day=123
 
-Para comprobar la solucion utilizar la siguiente gráfica y reemplazar los puntos de PlanetPosition1, PlanetPosition2 y PlanetPosition3
+Para comprobar la solucion utilizar la siguiente gráfica y reemplazar los puntos de P1, P2 y P3 por los que aparecen consultados en el servicio (PlanetPosition1, PlanetPosition2 y PlanetPosition 3 respectivamente)
 
 https://www.geogebra.org/classic/yjwppygq
  
