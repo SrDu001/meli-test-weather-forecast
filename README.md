@@ -42,21 +42,21 @@ Realizar un programa informático para poder predecir en los próximos 10 años:
 
 ## Solución
 
-La solucion se encuentra desplegada en Heroku, el siguiente es el enlace para acceder a swagger
+La solucion se encuentra desplegada en Heroku, el siguiente es el enlace para acceder a swagger:
 
 https://ml-challenge-sswf.herokuapp.com/swagger-ui.html
 
 #### Servicios:
 
-##### Obtener pronóstico por día, este servicio muestra tambien la posicion de los planetas para la comprobación
+##### Obtener pronóstico por día, este servicio muestra también la posicion de los planetas para la comprobación
 
 https://ml-challenge-sswf.herokuapp.com/api/sswf/weather?day=123
 
-Para comprobar la solucion utilizar la siguiente gráfica y reemplazar los puntos de P1, P2 y P3 por los que aparecen consultados en el servicio (PlanetPosition1, PlanetPosition2 y PlanetPosition 3 respectivamente)
+Para comprobar la posición de los planetas se reemplazan los puntos de P1, P2 y P3 por los que aparecen consultados en el servicio (PlanetPosition1, PlanetPosition2 y PlanetPosition 3 respectivamente) en la siguiente gráfica:
 
 https://www.geogebra.org/classic/yjwppygq
  
-##### Obtener resumen del pronóstico a 10 años, con este servicio se solucionan los 3 puntos
+##### Obtener resumen del pronóstico a 10 años, con este servicio se solucionan los 3 puntos del enunciado.
 
 https://ml-challenge-sswf.herokuapp.com/api/sswf/summary
 
@@ -78,14 +78,13 @@ Cuenta Docker Hub
 
 - Acceder al enlace: https://labs.play-with-docker.com/ e iniciar sesión
 - Hacer clic en Add Instance y en la consola escribir el siguiente comando ```docker run -dp 80:80 srdu001/ml-challenge-sswf:latest```
-- Una vez terminado aparecera activo el puerto 80 en la parte superior de la siguiente forma: ![image](https://user-images.githubusercontent.com/43072051/126933499-bb87606a-dd9a-4f18-90a2-009f9affeeba.png) al hacer clic se abrira una nueva ventana.
+- Una vez terminado aparecera activo el puerto 80 en la parte superior de la siguiente forma: ![image](https://user-images.githubusercontent.com/43072051/126933499-bb87606a-dd9a-4f18-90a2-009f9affeeba.png) al hacer clic en el botón 80 se abrirá una nueva ventana.
 - Añadir al final de la url  ```/swagger-ui.html ```
-
 
  ## Particularidades de la solución
  
 - Debido a que el periodo que se encuentran los planetas alineados es menor a un dia, para realizar el pronóstico se simplifican los numeros de la ecuacion de la linea recta.
-- Los planetas inician alineados a 90 grados.
+- Los planetas inician alineados a -90 grados.
 - Un periodo son uno o más dias consecutivos con el mismo pronóstico.
 
 ## Formulas Utilizadas
