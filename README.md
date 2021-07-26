@@ -38,7 +38,7 @@ Realizar un programa informático para poder predecir en los próximos 10 años:
 - Docker
 ##### Base de datos
 - PostgreSQL 13 (despliegue)
-- H2 (local)
+- H2 (local y PWD)
 
 ## Solución
 
@@ -66,9 +66,21 @@ https://ml-challenge-sswf.herokuapp.com/api/sswf/summary
 
 Docker
 
-- Desccargar repositorio y en la carpeta raíz ejecutar el comando:
+- Descargar repositorio y en la carpeta raíz ejecutar el comando:
   ```docker-compose up -d```
 - Acceder a http://localhost/swagger-ui
+
+## Instalación en la nube con PWD (Play with Docker)
+
+### Requerimientos
+
+Cuenta Docker Hub
+
+- Acceder al enlace: https://labs.play-with-docker.com/ e iniciar sesión
+- Hacer clic en Add Instance y en la consola escribir el siguiente comando ```docker run -dp 80:80 srdu001/ml-challenge-sswf:latest```
+- Una vez terminado aparecera activo el puerto 80 en la parte superior de la siguiente forma: ![image](https://user-images.githubusercontent.com/43072051/126933499-bb87606a-dd9a-4f18-90a2-009f9affeeba.png) al hacer clic se abrira una nueva ventana.
+- Añadir al final de la url  ```/swagger-ui.html ```
+
 
  ## Particularidades de la solución
  
