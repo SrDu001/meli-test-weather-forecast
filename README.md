@@ -68,7 +68,7 @@ Docker
 
 - Descargar repositorio y en la carpeta raíz ejecutar el comando:
   ```docker-compose up -d```
-- Acceder a http://localhost/swagger-ui
+- Acceder a http://localhost/swagger-ui.html
 
 ## Instalación en la nube con PWD (Play with Docker)
 
